@@ -58,8 +58,8 @@
                                         </a>
                                     </li>
 									<li>
-                                        <a href="/tweets">
-                                            All Tweets
+                                        <a href="/posts">
+                                            All Posts
                                         </a>
                                     </li>
                                     <li>

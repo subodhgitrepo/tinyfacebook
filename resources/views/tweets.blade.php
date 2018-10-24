@@ -2,29 +2,29 @@
 
 @section('content')
     
-    <!-- Current tweets -->
-    @if (count($tweets) > 0)
+    <!-- Current posts -->
+    @if (count($posts) > 0)
         <div class="panel panel-default">
             <div class="text-center panel-heading">
-			ALL TWEETS
+			ALL POSTS
             </div>
 
             <div class="panel-body">
-                <table class="table table-striped tweet-table">
+                <table class="table table-striped post-table">
 
                     <!-- Table Headings -->
                     <thead>
-                        <th>TWEET</th>
+                        <th>POST</th>
                       
                     </thead>
 
                     <!-- Table Body -->
                     <tbody>
-                        @foreach ($tweets as $key=>$tweet)
+                        @foreach ($posts as $key=>$post)
 							<tr>
-                                <!-- tweet Name -->
+                                <!-- post Name -->
                                 <td class="table-text">
-                                    <div>{{ $tweet->tweet_desc }}</div>
+                                    <div>{{ $post->post_desc }}</div>
                                 </td>
                             </tr>
                         @endforeach

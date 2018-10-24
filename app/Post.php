@@ -11,7 +11,7 @@ class Post extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['tweet_desc'];
+	protected $fillable = ['post_desc'];
 
 	/**
 	 * Get the user that owns the post.

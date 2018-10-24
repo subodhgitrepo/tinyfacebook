@@ -7,24 +7,24 @@
         <!-- Display Validation Errors -->
         @include('common.errors')
 
-        <!-- New tweet Form -->
-        <form action="{{ url('tweet') }}" method="POST" class="form-horizontal">
+        <!-- New post Form -->
+        <form action="{{ url('post') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            <!-- tweet Name -->
+            <!-- post Name -->
             <div class="form-group">
-                <label for="tweet" class="col-sm-3 control-label">tweet</label>
+                <label for="post" class="col-sm-3 control-label">post</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="tweet_desc" id="tweet-name" class="form-control">
+                    <input type="text" name="post_desc" id="post-name" class="form-control">
                 </div>
             </div>
 
-            <!-- Add tweet Button -->
+            <!-- Add post Button -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> POST MY TWEET
+                        <i class="fa fa-plus"></i> POST MY POST
                     </button>
                 </div>
             </div>
@@ -33,34 +33,34 @@
 
 
 
-    <!-- Current tweets -->
-    @if (count($tweets) > 0)
+    <!-- Current posts -->
+    @if (count($posts) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
-			{{ Auth::user()->name }}'s recent 5 tweets
+			{{ Auth::user()->name }}'s recent 5 posts
             </div>
 
             <div class="panel-body">
-                <table class="table table-striped tweet-table">
+                <table class="table table-striped post-table">
 
                     <!-- Table Headings -->
                     <thead>
-                        <th>TWEET</th>
+                        <th>POST</th>
                         <th>ACTION</th>
                     </thead>
 
                     <!-- Table Body -->
                     <tbody>
-                        @foreach ($tweets as $key=>$tweet)
+                        @foreach ($posts as $key=>$post)
 							
                             <tr>
-                                <!-- tweet Name -->
+                                <!-- post Name -->
                                 <td class="table-text">
-                                    <div>{{ $tweet->tweet_desc }}</div>
+                                    <div>{{ $post->post_desc }}</div>
                                 </td>
 
                                 <td>
-									<form action="{{ url('tweet/'.$tweet->id) }}" method="POST">
+									<form action="{{ url('post/'.$post->id) }}" method="POST">
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 							
